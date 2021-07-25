@@ -1,7 +1,7 @@
 import Foundation
 
 
-//MARK: - Lesson 1
+//MARK: - Lesson 1 - The starting point
 
 // Task 1
 let myConst = "this is my first const"
@@ -22,7 +22,7 @@ age = 20
 print(age)
 
 
-//MARK: - Lesson 2
+//MARK: - Lesson 2 - Fundamental types
 
 // Task 1
 var lengthOfPath = Double(52)
@@ -134,3 +134,8 @@ print("\(year) \(month) \(day)")
 
 // Task 17
 // - - -
+
+// Task 18
+//let a: Double = 12.2
+//let b: Double = 5.4
+//let average = (Float(a + b) / Float(2.0))
