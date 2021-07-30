@@ -509,32 +509,366 @@ extension Int {
 34[4] //nil
 
 
-// Test Task
-class ValueClass {
-    var value: Int = 0
+// MARK: - Test Task Start -
+//class ValueClass {
+//    var value: Int = 0
+//}
+//
+//struct ValueStruct {
+//    var value: Int = 0
+//}
+//
+//var operationArray = Array(1...10_000_000)
+//
+//// Class
+//var startTime = Date().timeIntervalSince1970
+//var classInstance = ValueClass()
+//for _ in operationArray {
+//    classInstance.value += 1
+//}
+//var finishTime = Date().timeIntervalSince1970
+//print("Время выполнения операций с классом - \(finishTime-startTime)")
+//
+//// Struct
+//startTime = Date().timeIntervalSince1970
+//var structInstance = ValueStruct()
+//for _ in operationArray {
+//    structInstance.value += 1
+//}
+//finishTime = Date().timeIntervalSince1970
+//print("Время выполнения операций со структурой - \(finishTime-startTime)")
+
+// MARK: - Test Task End -
+
+
+
+// MARK: - Lesson 32 - Generics
+
+// Task 1
+func swapElements<ElementType>(for tuple: inout (ElementType, ElementType)) -> Void {
+    (tuple.0, tuple.1) = (tuple.1, tuple.0)
+}
+var tuple = (5, 4)
+swapElements(for: &tuple)
+
+func firstSumElements<ElementType>(for firstElement: ElementType, with secondElement: ElementType) -> ElementType where ElementType: Numeric {
+    (firstElement + secondElement)
 }
 
-struct ValueStruct {
-    var value: Int = 0
+func secondSumElements<ElementType: Numeric>(for firstElement: ElementType, with secondElement: ElementType) -> ElementType {
+    (firstElement + secondElement)
 }
 
-var operationArray = Array(1...10_000_000)
-
-// Class
-var startTime = Date().timeIntervalSince1970
-var classInstance = ValueClass()
-for _ in operationArray {
-    classInstance.value += 1
+// Task 2
+struct Stack<ElementType> {
+    private var stack: Array<ElementType> = []
+    mutating func pushToStack(for element: ElementType) {
+        self.stack.insert(element, at: 0)
+    }
+    mutating func popFromStack() -> ElementType {
+        return self.stack.removeFirst()
+    }
+    func getStackElements() -> Array<ElementType> {
+        return self.stack
+    }
 }
-var finishTime = Date().timeIntervalSince1970
-print("Время выполнения операций с классом - \(finishTime-startTime)")
 
-// Struct
-startTime = Date().timeIntervalSince1970
-var structInstance = ValueStruct()
-for _ in operationArray {
-    structInstance.value += 1
+var stack: Stack<Int> = .init()
+for i in (1 ... 10) {
+    stack.pushToStack(for: i)
 }
-finishTime = Date().timeIntervalSince1970
-print("Время выполнения операций со структурой - \(finishTime-startTime)")
+print(stack)
+stack.popFromStack()
+stack.pushToStack(for: 33)
+print(stack)
 
+// Task 3
+extension Stack {
+    
+    mutating func replaceFirstElement(with element: ElementType) {
+        self.stack[0] = element
+    }
+    
+}
+stack.replaceFirstElement(with: 21)
+print(stack)
+
+// Task 4
+func search<ElementType: Comparable, CollectionType: Collection>(for element: ElementType, in collection: CollectionType) -> ElementType? where ElementType == CollectionType.Element {
+    for item in collection {
+        if (item == element) {
+            return item
+        }
+    }
+    return nil
+}
+
+let arrayForSearching = [1, 2, 3, 4 , 5]
+search(for: 3, in: arrayForSearching)
+
+// Task 5
+protocol QueueProtocol {
+    associatedtype QueueType
+    var items: Array<QueueType> { get }
+    mutating func push(for element: QueueType) -> Void
+    mutating func pop() -> QueueType
+}
+
+struct Queue<ElementType>: QueueProtocol {
+    typealias QueueType = ElementType
+    internal var items: Array<ElementType> = []
+}
+
+extension Queue {
+    mutating func push(for element: ElementType) {
+        self.items.insert(element, at: 0)
+    }
+    mutating func pop() -> ElementType {
+        return self.items.removeLast()
+    }
+}
+
+var queue: Queue<Int> = .init()
+for i in (1 ... 10) {
+    queue.push(for: i)
+}
+queue.items
+queue.pop()
+queue.push(for: 33)
+queue.items
+
+
+// MARK: - Lesson 33 - Opaque types n' "Some" keyword
+
+// Task 1
+protocol Vehicle {
+    associatedtype IDType
+    var uniqueID: IDType { get set }
+}
+
+func getCar<StructType: Vehicle>() -> StructType {
+    return Car(uniqueID: 12) as! StructType
+}
+
+func getVehicle() -> some Vehicle {
+    return Truck(uniqueID: "Shrek")
+}
+
+struct Car: Vehicle {
+    var uniqueID: UInt64
+}
+
+struct Truck: Vehicle {
+    var uniqueID: String
+}
+
+let car: Car = getCar()
+let truck = getVehicle()
+
+
+// MARK: - Lesson 34 - Error handlers
+
+// Task 1
+enum VendingMachineErrors: Error {
+    case invalidSelection// = "Invalid selection"
+    case insufficientFunds(coinsNeeded: UInt16)// = "Insufficient funds"
+    case outOfStock// = "Out of stock"
+}
+
+struct Item {
+    var price: UInt16
+    var count: UInt16
+}
+
+class VendingMachine {
+    
+    var inventory: Dictionary<String, Item> = [
+        "Candy Bar": Item(price: 12, count: 7),
+        "Chips": Item(price: 10, count: 4),
+        "Pretzels": Item(price: 7, count: 11)
+    ]
+    
+    var coinsDeposited: UInt16 = 0
+    
+    private func dispenceSnack(for snackName: String) -> Void {
+        print("Dispensing \(snackName)")
+    }
+    
+    func vend(for itemName: String) throws -> Void {
+        guard var item = inventory[itemName] else {
+            throw VendingMachineErrors.invalidSelection
+        }
+        guard item.count > 0 else {
+            throw VendingMachineErrors.outOfStock
+        }
+        guard item.price < coinsDeposited else {
+            throw VendingMachineErrors.insufficientFunds(coinsNeeded: item.price - coinsDeposited)
+        }
+        coinsDeposited -= item.price
+        item.count -= 1
+        inventory[itemName] = item
+        dispenceSnack(for: itemName)
+    }
+}
+
+let favoriteSnacks = [
+    "Alice": "Chips",
+    "Bob": "Licorice",
+    "Eve": "Pretzels"
+]
+
+func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws {
+    let snackName = favoriteSnacks[person] ?? "Candy Bar"
+    try vendingMachine.vend(for: snackName)
+}
+
+var vendingMachine = VendingMachine()
+vendingMachine.coinsDeposited = 8
+
+do {
+    try buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)
+} catch VendingMachineErrors.invalidSelection {
+    print(VendingMachineErrors.invalidSelection)
+} catch VendingMachineErrors.outOfStock {
+    print(VendingMachineErrors.outOfStock)
+} catch VendingMachineErrors.insufficientFunds(coinsNeeded: let coinsNeeded){
+    print(VendingMachineErrors.insufficientFunds(coinsNeeded: coinsNeeded))
+}
+
+
+func evaluate() throws -> Int {
+    return 5
+}
+
+let x = try? evaluate()
+
+//let photo = try! loadImage("./Resources/John Appleseed.jpg")
+
+struct NetworkErrors: Error {
+    var code: Int = 0
+}
+
+do {
+    throw NetworkErrors()
+} catch is NetworkErrors {
+    print("Network errors was detected")
+} catch {
+    print("Some undefined errors was detected")
+}
+
+
+extension NetworkErrors {
+    func description() -> String {
+        return "It's network error with code \(self.code)"
+    }
+}
+
+do {
+    throw NetworkErrors(code: 404)
+} catch let error as NetworkErrors {
+    print(error.description())
+} catch {
+    print("Some undefined errors was detected")
+}
+
+
+// MARK: - Lesson 35 - Overloading operators
+struct Point2D {
+    var x: UInt16
+    var y: UInt16
+}
+
+struct Vector2D {
+    var start: Point2D
+    var end: Point2D
+    func difference() -> Point2D {
+        return Point2D(x: (self.start.x - self.end.x), y: (self.start.y - self.end.y))
+    }
+}
+
+func +(_ left: Point2D, _ right: Point2D) -> Point2D {
+    return Point2D(x: (left.x + right.x), y: (left.y + right.y))
+}
+
+func +(_ left: Vector2D, _ right: Vector2D) -> Vector2D {
+    return Vector2D(start: (left.start + right.start),
+                    end: (left.end + right.end))
+}
+
+func -(_ left: Point2D, _ right: Point2D) -> Point2D {
+    return Point2D(x: (left.x - right.x), y: (left.y - right.y))
+}
+
+func -(_ left: Vector2D, _ right: Vector2D) -> Vector2D {
+    return Vector2D(start: (left.start - right.start),
+                    end: (left.end - right.end))
+}
+
+var vectors = (first: Vector2D(start: Point2D(x: 10, y: 20), end: Point2D(x: 31, y: 22)),
+               second: Vector2D(start: Point2D(x: 43, y: 32), end: Point2D(x: 74, y: 39))
+)
+
+print(vectors.first + vectors.second)
+
+func +=(_ left: inout Vector2D, _ right: Vector2D) {
+    left = left + right
+}
+
+func -=(_ left: inout Vector2D, _ right: Vector2D) {
+    left = left - right
+}
+
+vectors.first += vectors.second
+print("1: \(vectors.first)\n2: \(vectors.second)")
+
+func ==(_ left: Point2D, _ right: Point2D) -> Bool {
+    return ((left.x == right.x) && (left.y == right.y))
+}
+
+func ==(_ left: Vector2D, _ right: Vector2D) -> Bool {
+    return ((left.start == right.start) && (left.end == right.end))
+}
+
+func !=(_ left: Vector2D, _ right: Vector2D) -> Bool {
+    return !(left == right)
+}
+
+let vector1 = Vector2D(start: Point2D(x: 3, y: 2),
+                       end: Point2D(x: 4, y: 5))
+let vector2 = Vector2D(start: Point2D(x: 3, y: 2),
+                       end: Point2D(x: 4, y: 5))
+
+vector1 == vector2
+vector1 != vector2
+
+// Increment
+postfix operator ++
+postfix func ++(_ left: inout Vector2D) {
+    left += Vector2D(start: Point2D(x: 1, y: 1), end: Point2D(x: 1, y: 1))
+}
+
+vectors.first++
+print(vectors.first)
+
+// Decrement
+postfix operator --
+postfix func --(_ left: inout Vector2D) {
+    left -= Vector2D(start: Point2D(x: 1, y: 1), end: Point2D(x: 1, y: 1))
+}
+
+vectors.first--
+print(vectors.first)
+
+infix operator ±
+func ±(_ left: inout Point2D, _ right: inout Point2D) {
+    left = Point2D(x: 0, y: 0)
+    right = Point2D(x: 0, y: 0)
+    print("Я съел вектор 🤡")
+}
+
+var point1 = Point2D(x: 13, y: 14)
+var point2 = Point2D(x: 1742, y: 32)
+
+point1 ± point2
+print(point1)
+print(point2)
