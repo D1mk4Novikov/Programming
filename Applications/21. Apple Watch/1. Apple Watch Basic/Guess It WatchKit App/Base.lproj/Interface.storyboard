@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+    </dependencies>
+    <scenes>
+        <!--Rectangle-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller backgroundImage="Rectangle" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Guess_It_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="OlC-VX-N2c">
+                            <items>
+                                <label width="0.90000000000000002" alignment="center" verticalAlignment="center" text="Джентельмены удачи" textAlignment="center" numberOfLines="0" id="ffo-YJ-o5G">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
+                                <button width="1" alignment="left" verticalAlignment="center" title="🎩🍀" id="i6t-mW-pbI">
+                                    <fontDescription key="font" type="system" pointSize="26"/>
+                                    <connections>
+                                        <action selector="refreshAction" destination="AgC-eL-Hgc" id="AzC-wV-zZc"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="myButton" destination="i6t-mW-pbI" id="rt9-Dm-e0D"/>
+                        <outlet property="myLabel" destination="ffo-YJ-o5G" id="2LN-7e-CDv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="31"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Rectangle" width="300" height="300"/>
+    </resources>
+</document>

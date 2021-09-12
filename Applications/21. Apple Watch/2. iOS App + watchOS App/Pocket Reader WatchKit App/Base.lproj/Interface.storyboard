@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DT8-VP-Sry">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+    </dependencies>
+    <scenes>
+        <!--Book Detail Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="BookDetailController" customModule="Pocket_Reader_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Поллиана" id="Ws5-x1-bpI"/>
+                        <imageView alignment="left" image="444" id="UuG-iY-Aw1"/>
+                        <group width="1" alignment="left" layout="vertical" id="wdy-vb-m1x">
+                            <items>
+                                <label alignment="left" text="Автор:" id="qWG-54-IFU">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="Елена Михалкова" numberOfLines="0" id="nhg-A4-JRq"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="OPi-b1-bh2">
+                            <items>
+                                <label alignment="left" text="Издание:" id="knQ-Ce-ev7">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="2019" numberOfLines="0" id="3yr-0e-AAD"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="8" id="cXL-Jh-YtD">
+                            <items>
+                                <label alignment="left" text="Страниц:" id="NzO-DS-hxT">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="380" numberOfLines="0" id="HRf-qb-eGD"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="BO0-Ce-T8p">
+                            <items>
+                                <label alignment="left" text="Описание:" id="ZSW-SN-HOT">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <button alignment="left" id="gGN-cx-5yB">
+                                    <group key="contentGroup" width="1" alignment="left" id="NnJ-DM-q08">
+                                        <items>
+                                            <label alignment="left" numberOfLines="4" id="RVP-40-Njd">
+                                                <string key="text">Перед вами двадцать шестой роман цикла загадочных детективных историй «Расследования Макара Илюшина и Сергея Бабкина» от признанного мастера остросюжетной прозы Елены Михалковой.\nПожилая женщина Анна Сергеевна Бережкова живет в маленьком поселке, где все друг друга знают. Когда в соседнем пустующем доме наконец появляются новые жильцы, старушка сначала радуется, однако после знакомства с Натальей и Антоном решает, что лучше бы дом и дальше пустовал.</string>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <segue destination="V5H-TM-Jfe" kind="modal" id="827-Zb-qqF"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Выбрать книгу" id="bmB-Hw-GW5">
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <segue destination="Xzy-H1-hF8" kind="push" identifier="confirmedBook" id="xtj-3g-wF3"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="authorLabel" destination="nhg-A4-JRq" id="eXT-RY-pdS"/>
+                        <outlet property="descriptionLabel" destination="RVP-40-Njd" id="sN8-1a-ft7"/>
+                        <outlet property="editionLabel" destination="3yr-0e-AAD" id="Jna-VC-wYN"/>
+                        <outlet property="image" destination="UuG-iY-Aw1" id="jeV-ZS-qiM"/>
+                        <outlet property="nameLabel" destination="Ws5-x1-bpI" id="cOR-fL-k5M"/>
+                        <outlet property="pagesLabel" destination="HRf-qb-eGD" id="o5N-Mi-2cK"/>
+                        <outlet property="selectButton" destination="bmB-Hw-GW5" id="LJX-wy-erH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="31"/>
+        </scene>
+        <!--Description Interface Controller-->
+        <scene sceneID="Nxi-e5-VKm">
+            <objects>
+                <controller id="V5H-TM-Jfe" customClass="DescriptionInterfaceController" customModule="Pocket_Reader_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" numberOfLines="0" id="80P-DS-Kje"/>
+                        <button width="1" alignment="left" title="Отменить" id="fql-L9-pGq">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <action selector="cancelSelected" destination="V5H-TM-Jfe" id="2C1-66-yjQ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="80P-DS-Kje" id="nqn-4Q-5VW"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="336" y="-123"/>
+        </scene>
+        <!--Confirmed Interface Controller-->
+        <scene sceneID="Vbi-Dx-Fwd">
+            <objects>
+                <controller id="Xzy-H1-hF8" customClass="ConfirmedInterfaceController" customModule="Pocket_Reader_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" numberOfLines="0" id="xBz-SB-9US"/>
+                        <button width="1" alignment="left" title="Выбрать книгу" id="zxY-16-Xqf">
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <action selector="bookSelected" destination="Xzy-H1-hF8" id="jbh-ci-eLJ"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Отменить" id="EkU-mt-19e">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <action selector="cancelSelected" destination="Xzy-H1-hF8" id="zRs-4n-xdr"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="confirmationLabel" destination="xBz-SB-9US" id="Mrk-Hg-rkM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="336" y="214"/>
+        </scene>
+        <!--PickedBooks-->
+        <scene sceneID="kFF-Ae-arA">
+            <objects>
+                <controller identifier="PickedBooks" id="DT8-VP-Sry" customClass="StarterInterfaceController" customModule="Pocket_Reader_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="tV3-X5-EEd">
+                            <items>
+                                <tableRow identifier="myBookRow" id="LMN-h8-MaY" customClass="MyBookRowController" customModule="Pocket_Reader_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="U0l-cZ-7zc">
+                                        <items>
+                                            <label alignment="left" text="Расширить сознание легально" numberOfLines="0" id="LAz-up-2lC"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="LAz-up-2lC" id="WQX-SC-WlJ"/>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="dG6-gp-2XF"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Выбрать книги" id="yRt-L7-hSk">
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                            <connections>
+                                <segue destination="rPA-yZ-07h" kind="push" id="8dY-uo-zgt"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <menu key="menu" id="VGn-dN-Dg2">
+                        <items>
+                            <menuItem title="Delete all" icon="trash" id="ic6-xj-h3R">
+                                <connections>
+                                    <action selector="deleteAll" destination="DT8-VP-Sry" id="B1Z-XT-d96"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="table" destination="tV3-X5-EEd" id="OCF-QX-saE"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-306" y="-132"/>
+        </scene>
+        <!--Books Interface Controller-->
+        <scene sceneID="bKr-MT-47D">
+            <objects>
+                <controller id="rPA-yZ-07h" customClass="BooksInterfaceController" customModule="Pocket_Reader_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="c3J-vC-cfh">
+                            <items>
+                                <tableRow identifier="bookRow" id="aw0-nb-zda" customClass="TableRowController" customModule="Pocket_Reader_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="2h9-9b-jss">
+                                        <items>
+                                            <label alignment="left" text="Label" id="uWP-xa-P4I"/>
+                                            <label alignment="left" text="Label" id="atH-gv-C8U"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="authorLabel" destination="atH-gv-C8U" id="kzc-DA-3vD"/>
+                                        <outlet property="nameLabel" destination="uWP-xa-P4I" id="M7f-Mn-3Mp"/>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="Lyn-Y9-3Pi"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="headerRow" id="mYv-7w-WdQ" customClass="HeaderRowController" customModule="Pocket_Reader_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="10" id="JGG-xV-BeU">
+                                        <items>
+                                            <imageView width="24" height="24" alignment="left" verticalAlignment="center" image="children" id="dvu-fv-xTh">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <label alignment="left" text="Детские книги" numberOfLines="0" id="XrI-5P-veg">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="dvu-fv-xTh" id="d44-86-rdc"/>
+                                        <outlet property="sectionLabel" destination="XrI-5P-veg" id="hM0-Ws-Azy"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="c3J-vC-cfh" id="sKp-xv-bf5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-306" y="233"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="444" width="207.5" height="250"/>
+        <image name="children" width="64" height="64"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dG6-gp-2XF"/>
+    </inferredMetricsTieBreakers>
+</document>

@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0B8A89C2449D6F9008A8E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B8A89B2449D6F9008A8E58 /* AppDelegate.swift */; };
+		F0B8A89E2449D6F9008A8E58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B8A89D2449D6F9008A8E58 /* SceneDelegate.swift */; };
+		F0B8A8A02449D6F9008A8E58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B8A89F2449D6F9008A8E58 /* ViewController.swift */; };
+		F0B8A8A32449D6F9008A8E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B8A8A12449D6F9008A8E58 /* Main.storyboard */; };
+		F0B8A8A52449D6FD008A8E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B8A8A42449D6FD008A8E58 /* Assets.xcassets */; };
+		F0B8A8A82449D6FD008A8E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B8A8A62449D6FD008A8E58 /* LaunchScreen.storyboard */; };
+		F0B8A8AD2449D6FE008A8E58 /* Guess It WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F0B8A8AC2449D6FE008A8E58 /* Guess It WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0B8A8B32449D6FE008A8E58 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B8A8B12449D6FE008A8E58 /* Interface.storyboard */; };
+		F0B8A8B52449D6FF008A8E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B8A8B42449D6FF008A8E58 /* Assets.xcassets */; };
+		F0B8A8BC2449D6FF008A8E58 /* Guess It WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F0B8A8BB2449D6FF008A8E58 /* Guess It WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0B8A8C12449D6FF008A8E58 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B8A8C02449D6FF008A8E58 /* InterfaceController.swift */; };
+		F0B8A8C32449D6FF008A8E58 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B8A8C22449D6FF008A8E58 /* ExtensionDelegate.swift */; };
+		F0B8A8C52449D700008A8E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B8A8C42449D700008A8E58 /* Assets.xcassets */; };
+		F0B8A920244A09FA008A8E58 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B8A91F244A09FA008A8E58 /* FilmModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0B8A8AE2449D6FE008A8E58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0B8A8902449D6F9008A8E58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0B8A8AB2449D6FE008A8E58;
+			remoteInfo = "Guess It WatchKit App";
+		};
+		F0B8A8BD2449D6FF008A8E58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0B8A8902449D6F9008A8E58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0B8A8BA2449D6FF008A8E58;
+			remoteInfo = "Guess It WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0B8A8CC2449D700008A8E58 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F0B8A8BC2449D6FF008A8E58 /* Guess It WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B8A8D02449D700008A8E58 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F0B8A8AD2449D6FE008A8E58 /* Guess It WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F0B8A8982449D6F9008A8E58 /* Guess It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B8A89B2449D6F9008A8E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0B8A89D2449D6F9008A8E58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F0B8A89F2449D6F9008A8E58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0B8A8A22449D6F9008A8E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0B8A8A42449D6FD008A8E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0B8A8A72449D6FD008A8E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0B8A8A92449D6FD008A8E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0B8A8AC2449D6FE008A8E58 /* Guess It WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess It WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B8A8B22449D6FE008A8E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F0B8A8B42449D6FF008A8E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0B8A8B62449D6FF008A8E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0B8A8BB2449D6FF008A8E58 /* Guess It WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Guess It WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B8A8C02449D6FF008A8E58 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F0B8A8C22449D6FF008A8E58 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F0B8A8C42449D700008A8E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0B8A8C62449D700008A8E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0B8A91F244A09FA008A8E58 /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0B8A8952449D6F9008A8E58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B8A8B82449D6FF008A8E58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0B8A88F2449D6F9008A8E58 = {
+			isa = PBXGroup;
+			children = (
+				F0B8A89A2449D6F9008A8E58 /* Guess It */,
+				F0B8A8B02449D6FE008A8E58 /* Guess It WatchKit App */,
+				F0B8A8BF2449D6FF008A8E58 /* Guess It WatchKit Extension */,
+				F0B8A8992449D6F9008A8E58 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0B8A8992449D6F9008A8E58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0B8A8982449D6F9008A8E58 /* Guess It.app */,
+				F0B8A8AC2449D6FE008A8E58 /* Guess It WatchKit App.app */,
+				F0B8A8BB2449D6FF008A8E58 /* Guess It WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0B8A89A2449D6F9008A8E58 /* Guess It */ = {
+			isa = PBXGroup;
+			children = (
+				F0B8A89B2449D6F9008A8E58 /* AppDelegate.swift */,
+				F0B8A89D2449D6F9008A8E58 /* SceneDelegate.swift */,
+				F0B8A89F2449D6F9008A8E58 /* ViewController.swift */,
+				F0B8A8A12449D6F9008A8E58 /* Main.storyboard */,
+				F0B8A8A42449D6FD008A8E58 /* Assets.xcassets */,
+				F0B8A8A62449D6FD008A8E58 /* LaunchScreen.storyboard */,
+				F0B8A8A92449D6FD008A8E58 /* Info.plist */,
+			);
+			path = "Guess It";
+			sourceTree = "<group>";
+		};
+		F0B8A8B02449D6FE008A8E58 /* Guess It WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F0B8A8B12449D6FE008A8E58 /* Interface.storyboard */,
+				F0B8A8B42449D6FF008A8E58 /* Assets.xcassets */,
+				F0B8A8B62449D6FF008A8E58 /* Info.plist */,
+			);
+			path = "Guess It WatchKit App";
+			sourceTree = "<group>";
+		};
+		F0B8A8BF2449D6FF008A8E58 /* Guess It WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F0B8A91F244A09FA008A8E58 /* FilmModel.swift */,
+				F0B8A8C02449D6FF008A8E58 /* InterfaceController.swift */,
+				F0B8A8C22449D6FF008A8E58 /* ExtensionDelegate.swift */,
+				F0B8A8C42449D700008A8E58 /* Assets.xcassets */,
+				F0B8A8C62449D700008A8E58 /* Info.plist */,
+			);
+			path = "Guess It WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0B8A8972449D6F9008A8E58 /* Guess It */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0B8A8D12449D700008A8E58 /* Build configuration list for PBXNativeTarget "Guess It" */;
+			buildPhases = (
+				F0B8A8942449D6F9008A8E58 /* Sources */,
+				F0B8A8952449D6F9008A8E58 /* Frameworks */,
+				F0B8A8962449D6F9008A8E58 /* Resources */,
+				F0B8A8D02449D700008A8E58 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0B8A8AF2449D6FE008A8E58 /* PBXTargetDependency */,
+			);
+			name = "Guess It";
+			productName = "Guess It";
+			productReference = F0B8A8982449D6F9008A8E58 /* Guess It.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0B8A8AB2449D6FE008A8E58 /* Guess It WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0B8A8CD2449D700008A8E58 /* Build configuration list for PBXNativeTarget "Guess It WatchKit App" */;
+			buildPhases = (
+				F0B8A8AA2449D6FE008A8E58 /* Resources */,
+				F0B8A8CC2449D700008A8E58 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0B8A8BE2449D6FF008A8E58 /* PBXTargetDependency */,
+			);
+			name = "Guess It WatchKit App";
+			productName = "Guess It WatchKit App";
+			productReference = F0B8A8AC2449D6FE008A8E58 /* Guess It WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F0B8A8BA2449D6FF008A8E58 /* Guess It WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0B8A8C92449D700008A8E58 /* Build configuration list for PBXNativeTarget "Guess It WatchKit Extension" */;
+			buildPhases = (
+				F0B8A8B72449D6FF008A8E58 /* Sources */,
+				F0B8A8B82449D6FF008A8E58 /* Frameworks */,
+				F0B8A8B92449D6FF008A8E58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Guess It WatchKit Extension";
+			productName = "Guess It WatchKit Extension";
+			productReference = F0B8A8BB2449D6FF008A8E58 /* Guess It WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0B8A8902449D6F9008A8E58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Алексей Пархоменко";
+				TargetAttributes = {
+					F0B8A8972449D6F9008A8E58 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					F0B8A8AB2449D6FE008A8E58 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					F0B8A8BA2449D6FF008A8E58 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F0B8A8932449D6F9008A8E58 /* Build configuration list for PBXProject "Guess It" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0B8A88F2449D6F9008A8E58;
+			productRefGroup = F0B8A8992449D6F9008A8E58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0B8A8972449D6F9008A8E58 /* Guess It */,
+				F0B8A8AB2449D6FE008A8E58 /* Guess It WatchKit App */,
+				F0B8A8BA2449D6FF008A8E58 /* Guess It WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0B8A8962449D6F9008A8E58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B8A8A82449D6FD008A8E58 /* LaunchScreen.storyboard in Resources */,
+				F0B8A8A52449D6FD008A8E58 /* Assets.xcassets in Resources */,
+				F0B8A8A32449D6F9008A8E58 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B8A8AA2449D6FE008A8E58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B8A8B52449D6FF008A8E58 /* Assets.xcassets in Resources */,
+				F0B8A8B32449D6FE008A8E58 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B8A8B92449D6FF008A8E58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B8A8C52449D700008A8E58 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0B8A8942449D6F9008A8E58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B8A8A02449D6F9008A8E58 /* ViewController.swift in Sources */,
+				F0B8A89C2449D6F9008A8E58 /* AppDelegate.swift in Sources */,
+				F0B8A89E2449D6F9008A8E58 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B8A8B72449D6FF008A8E58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B8A8C32449D6FF008A8E58 /* ExtensionDelegate.swift in Sources */,
+				F0B8A920244A09FA008A8E58 /* FilmModel.swift in Sources */,
+				F0B8A8C12449D6FF008A8E58 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0B8A8AF2449D6FE008A8E58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0B8A8AB2449D6FE008A8E58 /* Guess It WatchKit App */;
+			targetProxy = F0B8A8AE2449D6FE008A8E58 /* PBXContainerItemProxy */;
+		};
+		F0B8A8BE2449D6FF008A8E58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0B8A8BA2449D6FF008A8E58 /* Guess It WatchKit Extension */;
+			targetProxy = F0B8A8BD2449D6FF008A8E58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0B8A8A12449D6F9008A8E58 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0B8A8A22449D6F9008A8E58 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0B8A8A62449D6FD008A8E58 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0B8A8A72449D6FD008A8E58 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F0B8A8B12449D6FE008A8E58 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0B8A8B22449D6FE008A8E58 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0B8A8C72449D700008A8E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0B8A8C82449D700008A8E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0B8A8CA2449D700008A8E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSZQ4D456H;
+				INFOPLIST_FILE = "Guess It WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexeyParkhomenko.Guess-It.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		F0B8A8CB2449D700008A8E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSZQ4D456H;
+				INFOPLIST_FILE = "Guess It WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexeyParkhomenko.Guess-It.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		F0B8A8CE2449D700008A8E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSZQ4D456H;
+				IBSC_MODULE = Guess_It_WatchKit_Extension;
+				INFOPLIST_FILE = "Guess It WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexeyParkhomenko.Guess-It.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		F0B8A8CF2449D700008A8E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSZQ4D456H;
+				IBSC_MODULE = Guess_It_WatchKit_Extension;
+				INFOPLIST_FILE = "Guess It WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexeyParkhomenko.Guess-It.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		F0B8A8D22449D700008A8E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSZQ4D456H;
+				INFOPLIST_FILE = "Guess It/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexeyParkhomenko.Guess-It";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0B8A8D32449D700008A8E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TSZQ4D456H;
+				INFOPLIST_FILE = "Guess It/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexeyParkhomenko.Guess-It";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0B8A8932449D6F9008A8E58 /* Build configuration list for PBXProject "Guess It" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B8A8C72449D700008A8E58 /* Debug */,
+				F0B8A8C82449D700008A8E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0B8A8C92449D700008A8E58 /* Build configuration list for PBXNativeTarget "Guess It WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B8A8CA2449D700008A8E58 /* Debug */,
+				F0B8A8CB2449D700008A8E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0B8A8CD2449D700008A8E58 /* Build configuration list for PBXNativeTarget "Guess It WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B8A8CE2449D700008A8E58 /* Debug */,
+				F0B8A8CF2449D700008A8E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0B8A8D12449D700008A8E58 /* Build configuration list for PBXNativeTarget "Guess It" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B8A8D22449D700008A8E58 /* Debug */,
+				F0B8A8D32449D700008A8E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0B8A8902449D6F9008A8E58 /* Project object */;
+}
